@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PrincipalController extends Controller
 {
     public function principal() {
-        echo '<h1>Home</h1>';
+       return view('site.principal');  // diretório.arquivo que estão dentro de resources
     }
 }
