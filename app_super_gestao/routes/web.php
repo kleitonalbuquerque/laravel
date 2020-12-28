@@ -13,14 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return '<h1>Home Page</h1>';
-});
+// Route::get('/', function () {
+//     return '<h1>Home Page</h1>';
+// });
 
-Route::get('/sobre-nos', function () {
-    return '<h1>Sobre nós</h1>';
-});
+Route::get('/', 'PrincipalController@principal');
 
-Route::get('/contato', function () {
-    return '<h1>Contato</h1>';
-});
+// Route::get('/sobre-nos', function () {
+//     return '<h1>Sobre nós</h1>';
+// });
+
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+
+// Route::get('/contato', function () {
+//     return '<h1>Contato</h1>';
+// });
+
+Route::get('/contato', 'ContatoController@contato');
