@@ -32,11 +32,16 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
 
 // Parâmetros: nome, categoria, titulo, mensagem
-Route::get('/contato/{titulo}/{nome}/{categoria}/{mensagem}', function(string $titulo, string $nome, string $categoria, string $mensagem) {
+Route::get('/contato/{titulo?}/{autor?}/{categoria?}/{mensagem?}', function(
+    string $titulo = 'Título', 
+    string $autor = 'Autor', 
+    string $categoria = 'Categoria', 
+    string $mensagem = ""
+    ) { // /{mensagem?} => parâmetro opcional
     echo '<div class="container">';
     echo "<h1>$titulo</h1>";
     echo '<br>';
-    echo "Autor: $nome";
+    echo "Autor: $autor";
     echo '<br>';
     echo "Categoria: $categoria";
     echo '<br>';
