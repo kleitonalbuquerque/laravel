@@ -50,10 +50,10 @@ Route::get('/contato', 'ContatoController@contato');
 // });
 
 // Tratando parâmetros de rotas com expressões regulares
-Route::get('/contato/{nome}/{categoria_id}', function(
-    string $nome = 'Desconhecido', 
-    int $categoria_id = 1 // 1 - 'Informação'
-    ) {
-    echo "$nome - $categoria_id";
-    }
-)->where('nome', '[A-Za-z]+')->where('categoria_id', '[0-9]+');
+// Route::get('/contato/{nome}/{categoria_id}', function(
+//     string $nome = 'Desconhecido', 
+//     int $categoria_id = 1 // 1 - 'Informação'
+//     ) {
+//     echo "$nome - $categoria_id";
+//     }
+// )->where('nome', '[A-Za-z]+')->where('categoria_id', '[0-9]+');
