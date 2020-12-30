@@ -17,27 +17,27 @@ use Illuminate\Support\Facades\Route;
 //     return '<h1>Home Page</h1>';
 // });
 
-Route::get('/', 'PrincipalController@principal');
-
 // Route::get('/sobre-nos', function () {
 //     return '<h1>Sobre nós</h1>';
 // });
-
-Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 // Route::get('/contato', function () {
 //     return '<h1>Contato</h1>';
 // });
 
+// Rotas públicas
+Route::get('/', 'PrincipalController@principal');
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
-
 Route::get('/login', function() { return 'Login'; });
 
-Route::get('/clientes', function() { return 'Clientes'; });
+// Rotas privadas => /app
+Route::prefix('/app')->group(function() {
+    Route::get('/clientes', function() { return 'Clientes'; });
+    Route::get('/fornecedores', function() { return 'Fornecedores'; });
+    Route::get('/produtos', function() { return 'Produtos'; });
+});
 
-Route::get('/fornecedores', function() { return 'Fornecedores'; });
-
-Route::get('/produtos', function() { return 'Produtos'; });
 
 // Parâmetros: nome, categoria, titulo, mensagem
 // Route::get('/contato/{titulo?}/{autor?}/{categoria?}/{mensagem?}', function(
